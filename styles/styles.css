@@ -1,0 +1,62 @@
+div {
+    background-color: green !important;
+    height: 10%; /* percentage height of its parent; in terms of div parent is body */
+    width: 1em; /* em measurement is relative to font (screen size); 1em to 16 px */
+    border: 1px solid black;
+
+}
+#id {
+    background-color: burlywood;
+}
+.class {
+    background-color: greenyellow;
+}
+div.note {
+    background-color: red;
+}
+
+/* descendant 
+any decendant underneath main */
+div p {
+    background-color: green;
+}
+
+/* child elements
+direct child of an element*/
+ul > li {
+    background-color: plum;
+}
+
+div > p {
+    background-color: plum;
+}
+
+/* pseudo selector (there's a huge list) */
+table:hover {
+    background-color: pink;
+}
+table:focus {
+
+}
+table:active {
+
+}
+/* ul has a lot of other ones also starting with first, nth */
+ul:first {
+
+}
+/* attribute 
+element[attr="value"]
+input.note[type="radio"]*/
+div[class="note"] {
+    color: yellow;
+}
+
+
+/* fizzbuzz styles */
+li.f {
+    color: blue;
+}
+li.b {
+    color: red;
+}

@@ -1,0 +1,32 @@
+
+/* fizzbuzz styles */
+li.f {
+    color: blue;
+    border: 2px dotted red;
+    padding: 10px;
+}
+li.b {
+    color: red;
+    border: 2px ridge blue;
+    padding: 10px;
+}
+.left {
+    float: left;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 75px;
+}
+.right {
+    float: right;
+    text-align: center;
+    padding-right:200px;
+    padding-top: 20px;
+}
+img{
+    width: 600px;
+    height: 350px;
+    image-orientation: center;
+}
+img:hover {
+    opacity: .5;
+}
