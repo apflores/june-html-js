@@ -14,7 +14,7 @@ li.b {
     float: left;
     text-align: center;
     padding-left: 100px;
-    padding-right: 75px;
+    padding-right: 200px;
 }
 .right {
     float: right;
@@ -29,4 +29,14 @@ img{
 }
 img:hover {
     opacity: .5;
+}
+#jsf {
+    color: blue;
+    border: 2px dotted red;
+    padding: 10px;
+}
+#jsb {
+    color: red;
+    border: 2px ridge blue;
+    padding: 10px;
 }
