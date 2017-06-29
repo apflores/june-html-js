@@ -1,3 +1,4 @@
+// basic prototyping
 "use strict";
 var c = console;
 //execute when window and DOM are ready
