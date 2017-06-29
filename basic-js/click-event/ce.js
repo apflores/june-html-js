@@ -4,7 +4,7 @@ var c = console;
 
 window.onload = function() {
     // get the <ul> list object
-    var list = document.getElementById("btns");
+    var list = document.getElementById("list");
     // attach click event to the list
     // example of event bubble
     list.addEventListener("click", function (event) {

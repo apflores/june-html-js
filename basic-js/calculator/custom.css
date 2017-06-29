@@ -1,0 +1,14 @@
+#display {
+    border: whitesmoke;
+    background-color: whitesmoke;
+    opacity: .5;
+    width: 8.25%;
+    color: black;
+}
+#display, #tab {
+    border: 1px solid darkblue;
+    background-color: lightskyblue;
+}
+td {
+    align-content: center;
+}
