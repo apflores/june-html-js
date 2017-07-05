@@ -1,0 +1,34 @@
+<html>
+<head>
+</head>
+    <body>
+        <div id="main"><h1>Filipino Restaurant</h1></div>
+        <div>
+            <div>   
+                <h2>Menu</h2>
+                <ul id="list"></ul>
+            </div>
+            <div>
+                <h2>Cart</h2>
+                <div id="cartList"></div>
+                <div id="total">Total: $0.00</div>
+            </div>
+        </div>
+        <script type="text/javascript" src="menu.js"></script>
+        <script type="text/javascript" src="cart.js"></script>
+        <script type="text/javascript" src="mainApp.js"></script>
+    </body>
+</html>
+
+<!--
+Main app
+the only module that can interact with the HTML and manipulate the DOM.
+other modules can only interact and be used by Main app.
+
+Menu app
+to store and retrieve the food menu
+
+Cart app
+to manage the user’s shopping cart as an object and/or array.
+functions: addItem, getItem, updateItem, removeItem, getCart, loadCart, updateCart, getTotal.  
+-->
