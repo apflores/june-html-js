@@ -18,15 +18,23 @@ window.app = function () {
 
     cartList.addEventListener("click", function (event) {
         var item = event.target;
-        var eventTar = item.parentElement.innerHTML;
-        var split = eventTar.split("<");
-        var itemName = split[0];
-        c.log(itemName);
         if (item.value == "x") {
+            var eventTar = item.parentElement.innerHTML;
+            var split = eventTar.split("<");
+            var itemName = split[0];
             removeItem(itemName);
             cartList.removeChild(item.parentElement);
             
         }
+        if(item.value == "update") {
+            var getId = item.parentElement.parentElement;
+            var getParentNode = item.parentNode;
+            c.log(getParentNode);
+            var list = document.getElementsByTagName("input");
+            c.log(getId);
+            c.log(list);
+        }
+
         c.log(getCart());
     });
 
