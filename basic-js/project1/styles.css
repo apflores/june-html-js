@@ -1,19 +1,41 @@
 body {
     font-family: "Arial Black", "Gadget", sans-serif;
+    background-color: whitesmoke;
 }
 #main {
     text-align: center;
 }
-.jumbotron {
+.name {
     background-color: blue;
     color: yellow;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .container {
-    margin-left: 25%;
+    margin-left: 10%;
+    padding-top: 15px;
 }
 #list {
     list-style: none;
 }
 li {
     padding-top: 30px;
+}
+.heading {
+    padding-top: 0px;
+    font-size: 18pt;
+    border-bottom: .15em solid blue;
+}
+#menu {
+    border: .2em solid red;
+    width: 570px;
+    height: 580px;
+    overflow-y: scroll;
+}
+#cart {
+    padding-left: 40px;
+}
+.pic {
+    width: 200px;
+    height: 150px;
 }

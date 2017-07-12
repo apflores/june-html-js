@@ -74,7 +74,7 @@ function uploadCart() {
             var parentDiv = document.createElement("div");
             var div = document.createElement("div");
             parentDiv.innerHTML = (bag[i].n + "<br>Price: $" + ((bag[i].p)*(bag[i].q)) + ".00");
-            div.innerHTML = "Quantity: <input type='text' placeholder=" + bag[i].q + " id=" + i + "><button value='x'>x</button>";
+            div.innerHTML = "Quantity: <input type='text' placeholder=" + bag[i].q + " id=" + i + "><button value='x'>x</button><br><br>";
             parentDiv.appendChild(div);
             list.appendChild(parentDiv);
         }
