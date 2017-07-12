@@ -28,12 +28,9 @@ li {
 }
 #menu {
     border: .2em solid red;
-    width: 570px;
-    height: 580px;
-    overflow-y: scroll;
 }
 #cart {
-    padding-left: 40px;
+    padding-left: 50px;
 }
 .pic {
     width: 200px;
