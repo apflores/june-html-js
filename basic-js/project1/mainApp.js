@@ -9,9 +9,11 @@ window.app = function () {
     var cartList = document.getElementById("cartList");
 
     list.addEventListener("click", function (event) {
+        var eventu = event.target;
         var eventTar = event.target.parentElement.innerHTML;
         var split = eventTar.split("<");
         var itemName = split[0];
+        c.log(itemName);
         addItem(getMenuItem(itemName));
         uploadCart();
     });
@@ -19,20 +21,14 @@ window.app = function () {
     cartList.addEventListener("click", function (event) {
         var item = event.target;
         if (item.value == "x") {
-            var eventTar = item.parentElement.innerHTML;
+            var eventTar = item.parentElement.parentElement.innerHTML;
             var split = eventTar.split("<");
+            c.log(split);
             var itemName = split[0];
+            c.log(itemName);
             removeItem(itemName);
-            cartList.removeChild(item.parentElement);
-            
-        }
-        if(item.value == "update") {
-            var getId = item.parentElement.parentElement;
-            var getParentNode = item.parentNode;
-            c.log(getParentNode);
-            var list = document.getElementsByTagName("input");
-            c.log(getId);
-            c.log(list);
+            cartList.removeChild(item.parentElement.parentElement);
+            updateCart();
         }
 
         c.log(getCart());

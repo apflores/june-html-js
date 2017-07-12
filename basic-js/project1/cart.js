@@ -33,7 +33,7 @@ function getMenuItem(name) {
 function addItem(item) {
     var check = 0;
     for (var i = 0; i < cart.bag.length; i++) {
-        if (cart.bag[i].n == item) {
+        if (cart.bag[i].n == item.n) {
             item.q += 1;
             check = 1;
         }
@@ -58,9 +58,11 @@ function removeItem(itemName) {
             }
         }
     }
+}
+
+function updateCart() {
     var div = document.getElementById("total");
     div.innerHTML = ("Total: $" + getTotal() + ".00");
-    c.log(cart);
 }
 
 function uploadCart() {
@@ -71,20 +73,15 @@ function uploadCart() {
         if (bag[i] != 0) {
             var parentDiv = document.createElement("div");
             var div = document.createElement("div");
-            var mostInner = document.createElement("div");
-            parentDiv.innerHTML = (bag[i].n + "<br>Price: $" + ((bag[i].p)*(bag[i].q)) + ".00<button value='x'>x</button>");
-            div.innerHTML = "Quantity: <input type='text' placeholder=" + bag[i].q + " id=" + i + ">";
-            mostInner.innerHTML = "<button value = 'update'>Update</button>";
-            div.appendChild(mostInner);
+            parentDiv.innerHTML = (bag[i].n + "<br>Price: $" + ((bag[i].p)*(bag[i].q)) + ".00");
+            div.innerHTML = "Quantity: <input type='text' placeholder=" + bag[i].q + " id=" + i + "><button value='x'>x</button>";
             parentDiv.appendChild(div);
             list.appendChild(parentDiv);
         }
     }
-
-    var div = document.getElementById("total");
-    div.innerHTML = ("Total: $" + getTotal() + ".00");
+    updateCart();
 }
 
-function updateCart(item) {
+function updateItem(item) {
     c.log(item + " quantity updated");
 }
