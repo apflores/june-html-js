@@ -1,11 +1,11 @@
 window.app2 = (function() {
     var privateVar = "i'm a private variable";
-    function doPost() {
+    function doPost(callback) {
         var url = "http://jsonplaceholder.typicode.com/posts";
 
         var xhr = new XMLHttpRequest();
 
-        xhr.onreadystatechange = function(callback) {
+        xhr.onreadystatechange = function() {
             if(xhr.readyState == 4) {
                 if(xhr.status == 201) {
                     var data = xhr.responseText;
