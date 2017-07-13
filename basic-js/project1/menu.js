@@ -45,15 +45,15 @@ var menuApp = (function () {
         }
     }
 
-        addMenuItem(new menuItem("Adobo", "main", 5.00, 1, "Pork boiled in vinegar and soy sauce", "<img src='Pork-Adobo-3.jpg' alt=''class='pic'>"));
-        addMenuItem(new menuItem("Fried Fish", "main", 6.00, 1, "Milkfish deep fried", "<img src='milkfish.jpg' alt=''class='pic'>"));
-        addMenuItem(new menuItem("Tinola", "main", 5.00, 1, "Chicken stew with potatoes and bitter melon", "<img src='tinola.jpg' alt=''class='pic'>"));
+        addMenuItem(new menuItem("Adobo", "main", 5.00, 1, "Pork boiled in vinegar and soy sauce", "<img src='Pork-Adobo-3.jpg' alt=''id='pic' class='img-responsive'>"));
+        addMenuItem(new menuItem("Fried Fish", "main", 6.00, 1, "Milkfish deep fried", "<img src='milkfish.jpg' alt=''id='pic' class='img-responsive'>"));
+        addMenuItem(new menuItem("Tinola", "main", 5.00, 1, "Chicken stew with potatoes and bitter melon", "<img src='tinola.jpg' alt=''id='pic' class='img-responsive'>"));
 
-        addMenuItem(new menuItem("Rice", "side", 1.00, 1, "Jasmine steamed rice", "<img src='rice.jpg' alt=''class='pic'>"));
-        addMenuItem(new menuItem("Steamed Vegetables", "side", 2.00, 1, "Broccoli, snow peas, green beans, cabbage, carrots", "<img src='veggie.jpg' alt=''class='pic'>"));
+        addMenuItem(new menuItem("Rice", "side", 1.00, 1, "Jasmine steamed rice", "<img src='rice.jpg' alt=''id='pic' class='img-responsive'>"));
+        addMenuItem(new menuItem("Steamed Vegetables", "side", 2.00, 1, "Broccoli, snow peas, green beans, cabbage, carrots", "<img src='veggie.jpg' alt=''id='pic' class='img-responsive'>"));
 
-        addMenuItem(new menuItem("Halo-Halo", "dessert", 5.00, 1, "Classic Filipino dessert with shaved ice, ube ice cream, and sweet gelatin", "<img src='halohalo.jpg' alt=''class='pic'>"));
-        addMenuItem(new menuItem("Leche Flan", "dessert", 3.00, 1, "Custard flan", "<img src='leche.jpg' alt=''class='pic'>"));
+        addMenuItem(new menuItem("Halo-Halo", "dessert", 5.00, 1, "Classic Filipino dessert with shaved ice, ube ice cream, and sweet gelatin", "<img src='halohalo.jpg' alt=''id='pic' class='img-responsive'>"));
+        addMenuItem(new menuItem("Leche Flan", "dessert", 3.00, 1, "Custard flan", "<img src='leche.jpg' alt=''id='pic' class='img-responsive'>"));
 
     return {
         menu: menu,
