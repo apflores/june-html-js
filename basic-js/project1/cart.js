@@ -57,35 +57,36 @@ var cartApp = (function () {
         }
     }
 
+    function uploadCart() {
+        var list = document.getElementById("cartList");
+            var bag = cart.bag;
+            list.innerHTML = "";
+                for (var i = 0; i < bag.length; i++) {
+                    if (bag[i] != 0) {
+                        var parentDiv = document.createElement("div");
+                        var div = document.createElement("div");
+                        parentDiv.innerHTML = (bag[i].n + "<br>Price: $" + ((bag[i].p) * (bag[i].q)) + ".00");
+                        div.innerHTML = "Quantity: <input type='text' placeholder=" + bag[i].q + " id=" + i + "><button value='x'>x</button><br><br>";
+                        parentDiv.appendChild(div);
+                        list.appendChild(parentDiv);
+                    }
+                }
+            updateCart();
+    }
+
     function updateCart() {
         var div = document.getElementById("total");
         div.innerHTML = ("Total: $" + getTotal() + ".00");
     }
 
-    function uploadCart() {
-        var list = document.getElementById("cartList");
-        var bag = cart.bag;
-        list.innerHTML = "";
-        for (var i = 0; i < bag.length; i++) {
-            if (bag[i] != 0) {
-                var parentDiv = document.createElement("div");
-                var div = document.createElement("div");
-                parentDiv.innerHTML = (bag[i].n + "<br>Price: $" + ((bag[i].p) * (bag[i].q)) + ".00");
-                div.innerHTML = "Quantity: <input type='text' placeholder=" + bag[i].q + " id=" + i + "><button value='x'>x</button><br><br>";
-                parentDiv.appendChild(div);
-                list.appendChild(parentDiv);
-            }
-        }
-        updateCart();
-    }
     return {
         getCart: getCart,
         getTotal: getTotal,
         getMenuItem: getMenuItem,
         addItem: addItem,
         removeItem: removeItem,
-        updateCart: updateCart,
-        uploadCart: uploadCart
+        uploadCart: uploadCart,
+        updateCart: updateCart
     }
 })();
 
