@@ -22,7 +22,9 @@ var cartApp = (function () {
     }
 
     function getMenuItem(name) {
-        var menu = menuApp.menu;
+        //fix this
+        var menu = getMenu();
+        c.log(menu);
         for (var i = 0; i < menu.length; i++) {
             if (name == menu[i].n) {
                 return menu[i];
@@ -57,26 +59,42 @@ var cartApp = (function () {
         }
     }
 
-    function uploadCart() {
-        var list = document.getElementById("cartList");
-            var bag = cart.bag;
-            list.innerHTML = "";
-                for (var i = 0; i < bag.length; i++) {
-                    if (bag[i] != 0) {
-                        var parentDiv = document.createElement("div");
-                        var div = document.createElement("div");
-                        parentDiv.innerHTML = (bag[i].n + "<br>Price: $" + ((bag[i].p) * (bag[i].q)) + ".00");
-                        div.innerHTML = "Quantity: <input type='text' placeholder=" + bag[i].q + " id=" + i + "><button value='x'>x</button><br><br>";
-                        parentDiv.appendChild(div);
-                        list.appendChild(parentDiv);
-                    }
-                }
-            updateCart();
-    }
+    //function uploadCart() {
+        
+    //}
 
     function updateCart() {
         var div = document.getElementById("total");
         div.innerHTML = ("Total: $" + getTotal() + ".00");
+    }
+
+    function xhrAjax(url, method, data) {
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, url, true); 
+            console.log("xhr object created: " + xhr.readyState);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 201) {
+                        resolve(JSON.parse(xhr.responseText));
+                    } else {
+                        reject(Error(xhr.status + " " + xhr.statusText));
+                    }
+                }
+            }
+            xhr.onerror = function () {
+                reject(Error("Network Error"));
+            };
+            xhr.send(JSON.stringify(data));
+        });
+    }
+
+    function uploadCart(callback) {
+        var promise = xhrAjax("http://localhost/webapi/api/Cart", "GET", null);
+        promise.then(function (data) {
+            callback(data);
+        });
     }
 
     return {
